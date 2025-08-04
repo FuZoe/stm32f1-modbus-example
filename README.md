@@ -18,7 +18,7 @@
 
 ## 所需软件
 
-* 任何串口调试器 (例如 https://github.com/favalex/modbus-cli for tests)(汉化者注：可以试试https://github.com/FuZoe/stm32f1-modbus-example/tree/master/%E4%B8%B2%E5%8F%A3%E8%B0%83%E8%AF%95%E5%99%A8)
+* 任何Modbus客户端软件 (例如 https://github.com/favalex/modbus-cli for tests）
 
 ## 库
 
