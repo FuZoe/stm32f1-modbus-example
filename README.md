@@ -26,12 +26,25 @@
 
 * https://github.com/alttch/rmodbus for Modbus
 
+* https://github.com/probe-rs/probe-rs
+
 ## 烧录
 
+
 ```shell
-cargo install cargo-flash # if not installed yed
+#如果您的电脑上还没有安装cargo-flash （汉化者注：cargo-flash现被整合到probe-rs库中 --2025/08/04）
+# 先下载脚本
+Invoke-RestMethod https://github.com/probe-rs/probe-rs/releases/latest/download/probe-rs-tools-installer.ps1 -OutFile probe-rs-installer.ps1
+# 以管理员身份运行 PowerShell，然后执行：
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope Process
+# 然后执行脚本
+.\probe-rs-installer.ps1
+```
+
+```shell
 cargo flash --chip stm32f103C8 --release
 ```
+
 
 ## 它能做什么
 
