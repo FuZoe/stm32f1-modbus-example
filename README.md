@@ -1,46 +1,45 @@
-# Rust Modbus context example with stm32 (stm32f103c8t6) &amp; RS485
+# Rust编写的stm32 (stm32f103c8t6) & RS485串口通讯测试
 
-Very simple example of Modbus context on stm32 via RS485/RTU.
+通过 RS485/RTU 在 stm32 上实现 串口通讯测试 的非常简单的示例。
 
-## Hardware
+## 器材
 
 * stm32f103c8t6
 
-* UART TTL to RS485 (MAX485)
+* UART TTL 转 RS485 (MAX485)
 
-* ST-LINK/V2 (for flashing)
+* ST-LINK/V2 (用于烧录)
 
-* any USB RS485 whistle (for testing from PC)
+* 任何 USB 转 RS485  (用于从电脑测试)
 
-## Wiring
+## 接线图
 
 ![Connection scheme](scheme.png?raw=true "Connection scheme")
 
-## Software
+## 所需软件
 
-* any Modbus client (e.g. https://github.com/favalex/modbus-cli for tests)
+* 任何串口调试器 (例如 https://github.com/favalex/modbus-cli for tests)(汉化者注：可以试试)
 
-## Libraries
+## 库
 
 * https://github.com/stm32-rs/stm32f1xx-hal/ for STM32F1 HAL
 
 * https://github.com/alttch/rmodbus for Modbus
 
-## Flashing
+## 烧录
 
 ```shell
 cargo install cargo-flash # if not installed yed
 cargo flash --chip stm32f103C8 --release
 ```
 
-## What can it do
+## 它能做什么
 
-Just the demo. You can read/write Modbus context with any Modbus/RTU client,
-get/set any Modbus registers.
+仅演示。您可以使用任何 Modbus/RTU 客户端读取/写入 Modbus 上下文，
+获取/设置任何 Modbus 寄存器。
 
-Input registers 0 and 1 contain processed frame counter (big-endian u32).
+输入寄存器 0 和 1 包含已处理帧计数器（大端 u32）。
 
-Rmodbus used with "smallcontext" feature, so only registers 0-999 (all types)
-are accessible.
+Rmodbus 与“smallcontext”功能配合使用，因此只能访问寄存器 0-999（所有类型）。
 
-Enjoy!
+尽情使用吧！
